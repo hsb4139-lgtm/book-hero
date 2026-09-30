@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>책의 용사 · 리브라리아 독서 RPG</title>
+<title>책의 용사 - 뽀로로!</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -763,7 +763,7 @@ const app=document.getElementById('app');
 function render(){if(cur.teacher)return renderTeacher();if(cur.create)return renderCreate();if(!cur.sid)return renderLogin();renderGame()}
 function renderLogin(){const st=Object.values(S.students).sort((a,b)=>a.num-b.num);
  app.innerHTML=`<div class="login"><div class="login-box">
- <div style="display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap"><div style="width:120px;flex:none">${charSVG({skin:1,hair:'spiky',hairColor:1,eyes:'big'},{hat:'sp_hat',top:'sp_top',bottom:'sp_bot',shoes:'sp_shoes',weapon:'sp_wpn',cape:'u_redcape'},{label:'책의 용사'})}</div><div class="logo" style="flex:1;min-width:240px">책의 용사<small>글자가 사라지는 왕국 리브라리아 · ${esc(S.settings.className)}</small></div></div>
+ <div style="display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap"><div style="width:120px;flex:none">${charSVG({skin:1,hair:'spiky',hairColor:1,eyes:'big'},{hat:'sp_hat',top:'sp_top',bottom:'sp_bot',shoes:'sp_shoes',weapon:'sp_wpn',cape:'u_redcape'},{label:'책의 용사'})}</div><div class="logo" style="flex:1;min-width:240px">책의 용사<small style="font-size:.42em;color:var(--gold2);text-shadow:0 3px 0 #7a4d00;margin-top:.35em">- 뽀로로!</small></div></div>
  <p style="color:#dfe2ff;max-width:34em;margin-top:18px">망각의 안개가 이야기를 지우고 있어요. 책을 읽고 기록할 때마다 잉크 마력이 모여 내 용사가 강해집니다.</p>
  ${st.length?`<div class="roster">${st.map(s=>`<button class="hero-card" data-act="pick" data-id="${s.id}">${charOf(s)}<b>${s.num}번 ${esc(s.nick)}</b><span>Lv ${s.lv}${s.job?' · '+JOBS[s.job.line].tiers[s.job.tier]:''}</span></button>`).join('')}</div>`:`<div class="roster"><div style="grid-column:1/-1;color:#dfe2ff">아직 용사가 없어요. 첫 용사를 만들어 모험을 시작하세요.</div></div>`}
  ${MODE.warn?`<p class="small" style="background:#d23f5c;color:#fff;border-radius:10px;padding:.4em .8em">${esc(MODE.warn)}</p>`:`<p class="small" style="color:#9aa0d6">${MODE.remote?'학급 서버에 연결됨':'이 기기에만 저장되는 체험 모드'}</p>`}
